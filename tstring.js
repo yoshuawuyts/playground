@@ -1,11 +1,11 @@
 function tag (strings, ...values) {
-  console.log(strings[0]) // "Hello "
-  console.log(strings[1]) // " world "
-  console.log(typeof values[0]) // function
+  return strings[0] + values[0]() + strings[1]
 }
 
-tag`Hello ${ a } world`
+const res = tag`Hello ${ a } world`
+console.log(res)
+// hello cruel world
 
 function a () {
-  return 15
+  return 'cruel'
 }
